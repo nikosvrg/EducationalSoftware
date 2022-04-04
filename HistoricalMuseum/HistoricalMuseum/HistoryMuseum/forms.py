@@ -13,6 +13,7 @@ class HeroForm(forms.ModelForm):
         fields = ['id', 'name', 'hero_img', 'context', 'description']
 
 
+#multiple choice question form 
 
 class TestForm(forms.Form):
     def __init__(self, data, questions, *args, **kwargs):
