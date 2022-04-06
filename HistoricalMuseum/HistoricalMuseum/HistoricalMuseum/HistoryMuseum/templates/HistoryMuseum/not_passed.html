@@ -1,0 +1,20 @@
+{% extends "HistoryMuseum/base.html" %}
+{% load static %}
+{% block content %}
+
+    <h3 class="center">Ολοκλήρωσες το τέστ</h3>
+
+    <div class="container">
+        <div class="divider"></div>
+        <div class="row"></div>
+        {% if user.is_authenticated %}
+            <h5 class="center">Κρίμα! Δεν πέρασες το Τεστ. Ξαναδιάβασε την θεωρία και ξαναπροσπάθησε!</h5>
+            <h5 class="center">Τα αποτελέσματα σου έχουν αποθηκευτεί στο προφίλ σου στην ενότητα αποτελέσματα τελευταίου Τεστ.</h5>
+            {{ user.stats.score|floatformat:0 }}
+            <img class="center" style="width:300px;height:300px;" src="https://www.clipartkey.com/mpngs/m/53-535380_transparent-warning-clipart-fail-stamp-png.png">
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}

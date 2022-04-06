@@ -1,0 +1,21 @@
+{% extends 'HistoryMuseum/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <h3 class="center">Ολοκλήρωσες το τέστ</h3>
+
+    <div class="container">
+        <div class="divider"></div>
+        <div class="row"></div>
+        {% if user.is_authenticated %}
+            <h5 class="center">Συγχαρητήρια. Πέρασες!</h5>
+            <h5 class="center">Τα αποτελέσματα σου έχουν αποθηκευτεί στο προφίλ σου στην ενότητα Αποτελέσματα τελευταίου τεστ.</h5>
+            <h5>{{ stats.score|floatformat:0 }}</h5>
+        <img class="center" style="width:300px;height:300px;" src="https://previews.123rf.com/images/artag/artag1409/artag140900009/31538820-passed-vector-stamp.jpg">
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}
